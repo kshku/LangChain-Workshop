@@ -4,6 +4,7 @@
 
 #set page(
   paper: "a4",
+  margin: 2.5cm,
 )
 
 #set text(
@@ -16,7 +17,7 @@
 )
 
 #set heading(
-  numbering: "1.",
+  numbering: "1.1.",
 )
 
 #show table.cell.where(y: 0): it => {
@@ -24,11 +25,12 @@
   strong(it)
 }
 
+#show link: underline
 
 #align(center, title())
 
 = Introduction
-*Purpose:* Establish what students already know about LLMs and AI-powered applications, and get them thinking about how these application have evolved.
+*Purpose:* Interactive beginning.
 
 == Discussion
 - What are the chatbots you used?
@@ -51,28 +53,81 @@
 = What is an Agent?
 *Purpose:* Introduce to agentic systems.
 
-+ What is an agent? \
-  Agent is a AI systems that can reason about a task, decide what actions to take, interact with its environment, and work towards achieving a specified goal.
-+ What makes an application agentic? \
-  Application becomes agentic when it gives the AI system the ability to deterimine and execute actions towards goal. \
-  Examples:
-  - Reading emails and identifying those requiring attention.
-  - Writing and executing code, then examining the execution output.
-  - Searching multiple sources and synthesizing information.
-  - Interacting with external services through tools and APIs.
+An agent is an AI system that can reason about a task, decide what actions to take, interact with its environment, and work towards achieving a specified goal.
+
+What makes an application agentic?
+An application becomes agentic when it gives the AI system the ability to deterimne and execute actions towards a goal. \
+Examples:
+- Reading emails and identifying those requiring attention.
+- Writing and executing code, then examining the execution output.
+- Searching multiple sources and synthesizing information.
+- Interacting with external services through tools and APIs.
+The system can observe the results of its actions and use that information to decide what to do next.
+
+= Chat models and Providers
+*Purpose:* Introduce chat models, model providers and how applications interact with them.
+
+According to what we understood till now, we know we need an Intelligent system to do the reasoning and make decisions.
+We call it the brain of the Agent.
+Usually we use chat models as the brain of the Agent.
+
+_What is the difference between chat models and LLMs?_
+
+== Chat Models
+There are several Large Language Models (LLMs) available today, such as GPT, Claude, Gemini, Grok, DeepSeek, etc.
+These models are trained on large amounts of data and can understand and generate human-like text.
+Chat models are models designed to interact through conversational messages.
+
+Building and training our own LLMs from scratch requires enormous amounts of data, computational resources and infrastructure.
+This is generally beyond the scope of our application development.
+Instead, we use already-trained models made available by different providers.
+
+== Model Providers
+A model provider is an organization or service that makes models available for applications to use.
+
+Examples:
+- OpenAI -- GPT models
+- Anthropic -- Claude models
+- Google -- Gemini models
+- DeepSeek -- DeepSeek models
+- xAI - Grok models
+
+These providers expose APIs that allow external applications to interact with their models.
+Each provider may define its own API, authentication mechanism, request format and response format.
+
+For example, when we want to use a model:
++ We obtain an API key from the provider.
++ Our application sends a request to the provider's API.
++ The provider processes the request using the selected model.
++ The model generates a response.
++ The provider returns the response to our application.
+
+Example API references:
+- #link("https://developers.openai.com/api/reference")[OpenAI API Reference]
+- #link("https://aistudio.google.com/api-reference")[Gemini API Reference]
+
+Imagine writing app using OpenAI's api, and later you want to shift to Gemini.
+Now you need to understand Gemini's API and mechanisms, and we may also need to rewrite code!
+
+What if we had single API?
+Or at least an single interface which deals with the every API?
+
+This is where langchain comes into rescue!
+This is one of the problem that LangChain helps to solve.
 
 = What is LangChain
 *Purpose:* Introduce to LangChain
 
-#link("https://github.com/langchain-ai")[LangChain]
+#link("https://www.langchain.com/")[LangChain]
+#link("https://github.com/langchain-ai")[(github link)]
 is an open-source framework and ecosystem for developing applications powered by Large Language Models (LLMs).
 It provides abstractions and integrations that simplify working with models, tools, data sources and agentic workflows.
 
 #table(
   columns: (0.3fr, 1fr),
   table.header([Component], [What it provides]),
-  [LangChain], [High-level abstractions for building LLM applications and agents],
-  [LangGraph], [Graph-based orchestration for stateful and long-running agent workflows],
-  [Deep Agents], [A higher-level agent harness built on LangGraph],
-  [LangSmith], [Observability, evaluation and deployment capabilities],
+  link("https://github.com/langchain-ai/langchain")[LangChain], [High-level abstractions for building LLM applications and agents],
+  link("https://github.com/langchain-ai/langgraph")[LangGraph], [Graph-based orchestration for stateful and long-running agent workflows],
+  link("https://github.com/langchain-ai/deepagents")[Deep Agents], [A higher-level agent harness built on LangGraph],
+  link("https://docs.langchain.com/langsmith/home")[LangSmith], [Observability, evaluation and deployment capabilities],
 )
