@@ -7,11 +7,24 @@ authors = [
     { name = "kshku", email = "1211shree@gmail.com" }
 ]
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "jupyter>=1.1.1",
+    "langchain[mcp]>=1.4.8",
+    "pydantic-settings>=2.16.2",
+    "python-dotenv>=1.2.4",
+]
 
-[project.scripts]
-langchain-workshop = "langchain_workshop:main"
+[project.optional-dependencies]
+ollama = [
+    "langchain-ollama>=1.1.0",
+]
+openrouter = [
+    "langchain-openrouter>=0.2.9",
+]
+
+[tool.setuptools]
+py-modules = ["models", "settings"]
 
 [build-system]
-requires = ["uv_build>=0.13.6,<0.14.0"]
-build-backend = "uv_build"
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
