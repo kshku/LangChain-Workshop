@@ -67,7 +67,7 @@ The system can observe the results of its actions and use that information to de
 = Chat models and Providers
 *Purpose:* Introduce chat models, model providers and how applications interact with them.
 
-According to what we understood till now, we know we need an Intelligent system to do the reasoning and make decisions.
+According to what we understood till now, we know we need an intelligent system to do the reasoning and make decisions.
 We call it the brain of the Agent.
 Usually we use chat models as the brain of the Agent.
 
@@ -106,14 +106,12 @@ Example API references:
 - #link("https://developers.openai.com/api/reference")[OpenAI API Reference]
 - #link("https://aistudio.google.com/api-reference")[Gemini API Reference]
 
-Imagine writing app using OpenAI's api, and later you want to shift to Gemini.
-Now you need to understand Gemini's API and mechanisms, and we may also need to rewrite code!
+Imagine writing an app using OpenAI's api, and later you want to shift to Gemini.
+Now you need to understand Gemini's API, authentication mechanisms, request and response formats, and we may also need to rewrite code!
 
-What if we had single API?
-Or at least an single interface which deals with the every API?
+What if we had a common interface which deals with different models regardless of the provider API?
 
-This is where langchain comes into rescue!
-This is one of the problem that LangChain helps to solve.
+This is one of the problems that LangChain helps to solve.
 
 = What is LangChain
 *Purpose:* Introduce to LangChain
@@ -131,3 +129,27 @@ It provides abstractions and integrations that simplify working with models, too
   link("https://github.com/langchain-ai/deepagents")[Deep Agents], [A higher-level agent harness built on LangGraph],
   link("https://docs.langchain.com/langsmith/home")[LangSmith], [Observability, evaluation and deployment capabilities],
 )
+
+= Connecting to a chat model
+*Purpose:* Get familiar with initializing a chat model and interacting with it using LangChain.
+
+== Project Setup
+Setup `MODEL_PROVIDER`, `MODEL_NAME`, and the corresponding provider API key in the `.env` file.
+
+An `.env.example` file is already provided.
+
+The `main` branch contains two shared modules:
+- `settings.py` -> Loads application configuration using Pydantic Settings and loads environment variables using `python-dotenv`.
+- `model.py` -> Initializes the chat model used throughout the demo code, except for the first model-connection demo.
+
+== First Interaction
+*Demo code:* `src/01-connecting-to-models/connecting.ipynb` \
+*Running:* Execute `uv run jupyter lab` from the repository root and open the notebook.
+
+Try different providers and different models.
+All you need to do is change names and have specific integration installed.
+LangChain handles everything else under-the-hood.
+
+You will often read #link("https://docs.langchain.com/")[Documentation of LangChain] throughout the session.
+
+Try out parameters like `temperature`, `max_tokens`, `timeout`, `max_retries`, etc.
