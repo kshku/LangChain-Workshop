@@ -147,9 +147,16 @@ The `main` branch contains two shared modules:
 *Running:* Execute `uv run jupyter lab` from the repository root and open the notebook.
 
 Try different providers and different models.
-All you need to do is change names and have specific integration installed.
-LangChain handles everything else under-the-hood.
 
-You will often read #link("https://docs.langchain.com/")[Documentation of LangChain] throughout the session.
 
-Try out parameters like `temperature`, `max_tokens`, `timeout`, `max_retries`, etc.
+For supported providers, changing the provider and model configuration is usually enough.
+The corresponding LangChain integration must be installed, and LangChain handles the provider-specific interaction underneath.
+
+You will frequently refere to the
+#link("https://docs.langchain.com/")[Documentation of LangChain]
+throughout the session.
+
+Try out parameters such as `temperature`, `max_tokens`, `timeout`, and `max_retries`.
+Observe how changing these parameters affects the model interaction.
+
+= Creating Agent
