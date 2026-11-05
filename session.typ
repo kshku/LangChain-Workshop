@@ -130,8 +130,8 @@ It provides abstractions and integrations that simplify working with models, too
   link("https://docs.langchain.com/langsmith/home")[LangSmith], [Observability, evaluation and deployment capabilities],
 )
 
-= Connecting to a chat model
-*Purpose:* Get familiar with initializing a chat model and interacting with it using LangChain.
+= Foundation
+*Purpose:* Get familiar with initializing a chat model, agent and interacting with them using LangChain.
 
 == Project Setup
 Setup `MODEL_PROVIDER`, `MODEL_NAME`, and the corresponding provider API key in the `.env` file.
@@ -142,12 +142,11 @@ The `main` branch contains two shared modules:
 - `settings.py` -> Loads application configuration using Pydantic Settings and loads environment variables using `python-dotenv`.
 - `model.py` -> Initializes the chat model used throughout the demo code, except for the first model-connection demo.
 
-== First Interaction
-*Demo code:* `src/01-connecting-to-models/connecting.ipynb` \
+== Connecting to a chat model
+*Demo code:* `src/01-foundation/connecting-to-model.ipynb` \
 *Running:* Execute `uv run jupyter lab` from the repository root and open the notebook.
 
 Try different providers and different models.
-
 
 For supported providers, changing the provider and model configuration is usually enough.
 The corresponding LangChain integration must be installed, and LangChain handles the provider-specific interaction underneath.
@@ -159,4 +158,10 @@ throughout the session.
 Try out parameters such as `temperature`, `max_tokens`, `timeout`, and `max_retries`.
 Observe how changing these parameters affects the model interaction.
 
-= Creating Agent
+== Creating Agent
+*Demo code:* `src/01-foundation/creating-agent.ipynb` \
+*Running:* Execute `uv run jupyter lab` from the repository root and open the notebook.
+
+== System Prompt
+*Demo code:* `src/01-foundation/system-prompt.ipynb` \
+*Running:* Execute `uv run jupyter lab` from the repository root and open the notebook.
