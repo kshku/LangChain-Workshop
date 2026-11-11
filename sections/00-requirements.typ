@@ -15,10 +15,28 @@
 The Python dependencies are declared in `pyproject.toml` and installed with `uv sync`.
 They include LangChain, LangGraph, Deep Agents, the MCP integration, QuickJS, Pydantic Settings, and Questionary.
 
+A plain `uv sync` installs the base packages. The provider integrations live in optional extras,
+so install the one that matches your model provider:
+
+#table(
+  columns: (auto, 1fr, 1fr),
+  table.header([Extra], [Adds], [Install with]),
+  [`ollama`], [`langchain-ollama`], [`uv sync --extra ollama`],
+  [`openrouter`], [`langchain-openrouter`], [`uv sync --extra openrouter`],
+)
+
+OpenAI, Anthropic, and Google integrations are already included in the base dependencies,
+so no extra is needed for those.
+
+If you want everything (for example, to try several providers), use `uv sync --all-extras`.
+Note that `uv sync --ollama` does not work -- `--ollama` is not a uv flag. The package group is
+called `ollama`, but uv expects the `--extra` prefix.
+
 ```bash
 git clone https://github.com/kshku/LangChain-Workshop.git
 cd LangChain-Workshop
-uv sync
+uv sync                      # base dependencies
+# uv sync --extra ollama     # ...or add a provider extra
 cp .env.example .env
 ```
 
