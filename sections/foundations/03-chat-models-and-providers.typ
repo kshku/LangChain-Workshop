@@ -48,7 +48,7 @@ What if we had a common interface which deals with different models regardless o
 This is one of the problems that LangChain helps to solve.
 
 #figure(
-  image("/assets/diagrams/provider-abstraction.svg", width: 100%),
+  image("/assets/diagrams/provider-abstraction.svg", width: 80%),
   caption: [One interface in the application, provider-specific APIs underneath.],
 )
 

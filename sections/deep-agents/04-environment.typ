@@ -1,3 +1,5 @@
+#import "../../lib.typ": demo
+
 = The Deep Agent Environment
 *Purpose:* Understand where a deep agent acts.
 
@@ -55,8 +57,7 @@ The demo also adds a permission rule that allows writes under `/reference/**`.
 Permissions are evaluated in order, and the first matching rule wins.
 If no rule matches, the operation is allowed by default -- so it is worth being explicit about what should be denied.
 
-*Demo code:* `src/08-deepagent-environment/filesystem.py` \
-*Running:* `uv run python src/08-deepagent-environment/filesystem.py`
+#demo("src/08-deepagent-environment/filesystem.py", raw("uv run python src/08-deepagent-environment/filesystem.py"))
 
 *Further reading:*
 - #link("https://docs.langchain.com/oss/python/deepagents/backends")[Deep Agents docs -- Backends]
@@ -81,8 +82,7 @@ In the demo, the agent writes the first 15 Fibonacci numbers to `fib.py` and the
 `LocalShellBackend` is excellent for learning and for trusted local workflows.
 It is not a security boundary. If you are running untrusted code, use a real sandbox provider instead.
 
-*Demo code:* `src/08-deepagent-environment/localshell.py` \
-*Running:* `uv run python src/08-deepagent-environment/localshell.py`
+#demo("src/08-deepagent-environment/localshell.py", raw("uv run python src/08-deepagent-environment/localshell.py"))
 
 *Further reading:* #link("https://docs.langchain.com/oss/python/deepagents/sandboxes")[Deep Agents docs -- Sandboxes]
 
@@ -119,8 +119,7 @@ That means fewer round trips and far fewer tokens.
 The demo runs the same analytics task twice -- once with the interpreter and once without -- against the Chinook database.
 Compare both the answers and the amount of work the model had to do.
 
-*Demo code:* `src/08-deepagent-environment/interpreter.py` \
-*Running:* `uv run python src/08-deepagent-environment/interpreter.py`
+#demo("src/08-deepagent-environment/interpreter.py", raw("uv run python src/08-deepagent-environment/interpreter.py"))
 
 *Further reading:* #link("https://docs.langchain.com/oss/python/deepagents/interpreters")[Deep Agents docs -- Interpreters]
 

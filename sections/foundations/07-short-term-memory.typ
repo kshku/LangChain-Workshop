@@ -1,3 +1,5 @@
+#import "../../lib.typ": demo
+
 = Short-term Memory
 *Purpose:* Give an agent memory within a conversation.
 
@@ -12,8 +14,7 @@ Then, in a separate call, we ask what our favourite colour is.
 Since the second call only contains the new question, the agent has nothing to remember.
 Any answer it gives is a guess, not a memory.
 
-*Demo code:* `src/03-short-term-memory/no-memory.ipynb` \
-*Running:* Execute `uv run jupyter lab` from the repository root and open the notebook.
+#demo("src/03-short-term-memory/no-memory.ipynb", [Execute `uv run jupyter lab` from the repository root and open the notebook.])
 
 == Threads and checkpointers
 To remember a conversation, we need two things:
@@ -47,8 +48,7 @@ For a real application, use a persistent checkpointer such as `SqliteSaver` or `
 
 Try changing the `thread_id` and observe how the agent's memory changes.
 
-*Demo code:* `src/03-short-term-memory/checkpointer.ipynb` \
-*Running:* Execute `uv run jupyter lab` from the repository root and open the notebook.
+#demo("src/03-short-term-memory/checkpointer.ipynb", [Execute `uv run jupyter lab` from the repository root and open the notebook.])
 
 *Further reading:* #link("https://docs.langchain.com/oss/python/langchain/short-term-memory")[LangChain docs -- Short-term memory]
 

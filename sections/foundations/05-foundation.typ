@@ -1,3 +1,5 @@
+#import "../../lib.typ": demo
+
 = Foundation
 *Purpose:* Get familiar with initializing a chat model, agent and interacting with them using LangChain.
 
@@ -46,8 +48,7 @@ throughout the session.
 Try out parameters such as `temperature`, `max_tokens`, `timeout`, and `max_retries`.
 Observe how changing these parameters affects the model interaction.
 
-*Demo code:* `src/01-foundation/connecting-to-model.ipynb` \
-*Running:* Execute `uv run jupyter lab` from the repository root and open the notebook.
+#demo("src/01-foundation/connecting-to-model.ipynb", [Execute `uv run jupyter lab` from the repository root and open the notebook.])
 
 == Creating Agent
 An agent wraps the model in a loop.
@@ -75,12 +76,11 @@ print(response["messages"][-1].content)
 The response contains the whole conversation, not just the final text.
 That is useful: we can inspect what the agent received, what it decided, and what it sent back.
 
-Messages have roles. `HumanMessage` is the user, `AIMessage` is the model, and `ToolMessage` will appear later when the agent uses a tool.
+Messages have roles. `HumanMessage` is the user, `AIMessage` is the model.
 You can also pass messages as tuples such as `("human", "...")` or as dictionaries with a `role` and `content`.
 
 A useful experiment is to pass a short history instead of a single message.
 The agent will use that history as context for the next reply.
-Remember, though, that this history is only what we send in this call -- we will add persistent memory in the next section.
 
 Finally, the demo shows streaming:
 
@@ -96,8 +96,7 @@ for token, metadata in agent.stream(
 Streaming returns tokens as they are produced instead of waiting for the complete response.
 That is what makes a chat interface feel responsive.
 
-*Demo code:* `src/01-foundation/creating-agent.ipynb` \
-*Running:* Execute `uv run jupyter lab` from the repository root and open the notebook.
+#demo("src/01-foundation/creating-agent.ipynb", [Execute `uv run jupyter lab` from the repository root and open the notebook.])
 
 == System Prompt
 The system prompt is the instruction the model receives before the conversation starts.
@@ -161,6 +160,5 @@ agent = create_agent(
 Now the result is available as `response["structured_response"]`, and the fields are validated by Pydantic.
 This is much safer than parsing free-form text in application code.
 
-*Demo code:* `src/01-foundation/system-prompt.ipynb` \
-*Running:* Execute `uv run jupyter lab` from the repository root and open the notebook.
+#demo("src/01-foundation/system-prompt.ipynb", [Execute `uv run jupyter lab` from the repository root and open the notebook.])
 

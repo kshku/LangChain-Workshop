@@ -1,3 +1,5 @@
+#import "../../lib.typ": demo
+
 = Human-in-the-Loop
 *Purpose:* Let a human approve or change an action before it happens.
 
@@ -49,8 +51,7 @@ Run `hitl.py` and try all three decisions.
 When you edit an email, notice that the tool result quotes the edited subject and body -- not the original request.
 That is why the system prompt tells the agent to trust the tool result instead of assuming the request was carried out.
 
-*Demo code:* `src/07-HITL/hitl.py` \
-*Running:* `uv run python src/07-HITL/hitl.py`
+#demo("src/07-HITL/hitl.py", raw("uv run python src/07-HITL/hitl.py"))
 
 == Responding to the agent
 Sometimes the agent does not need permission. It needs information that only the user can provide.
@@ -63,8 +64,7 @@ This shows that different tools can have different levels of human control in th
 
 The demo uses `questionary` to make the choices interactive.
 
-*Demo code:* `src/07-HITL/hitl_response.py` \
-*Running:* `uv run python src/07-HITL/hitl_response.py`
+#demo("src/07-HITL/hitl_response.py", raw("uv run python src/07-HITL/hitl_response.py"))
 
 *Further reading:* #link("https://docs.langchain.com/oss/python/deepagents/human-in-the-loop")[Deep Agents docs -- Human-in-the-loop]
 

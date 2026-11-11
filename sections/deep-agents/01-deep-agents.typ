@@ -1,3 +1,5 @@
+#import "../../lib.typ": demo
+
 = Deep Agents
 *Purpose:* Move from a single agent loop to a harness built for long-running work.
 
@@ -36,8 +38,7 @@ print(result["messages"][-1].text)
 Try the same prompt with `create_agent` and with `create_deep_agent`.
 The answers may look similar, but the deep agent now has filesystem tools, planning, and the rest of the harness available behind the scenes.
 
-*Demo code:* `src/05-creating-deepagents/creating_deep_agent.py` \
-*Running:* `uv run python src/05-creating-deepagents/creating_deep_agent.py`
+#demo("src/05-creating-deepagents/creating_deep_agent.py", raw("uv run python src/05-creating-deepagents/creating_deep_agent.py"))
 
 *Further reading:* #link("https://docs.langchain.com/oss/python/deepagents/overview")[Deep Agents overview]
 

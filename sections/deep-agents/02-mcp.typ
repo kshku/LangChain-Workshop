@@ -1,3 +1,5 @@
+#import "../../lib.typ": demo
+
 = Model Context Protocol (MCP)
 *Purpose:* Connect an agent to external tools through one shared protocol.
 
@@ -30,8 +32,7 @@ Notice also that MCP calls are asynchronous, so the demo uses `async`/`await` an
   caption: [MCP separates tool discovery from tool selection.],
 )
 
-*Demo code:* `src/06-mcp/mcp-demo.py` \
-*Running:* `uv run python src/06-mcp/mcp-demo.py`
+#demo("src/06-mcp/mcp-demo.py", raw("uv run python src/06-mcp/mcp-demo.py"))
 
 *Further reading:*
 - #link("https://modelcontextprotocol.io/")[Model Context Protocol]

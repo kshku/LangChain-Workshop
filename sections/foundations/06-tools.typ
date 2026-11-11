@@ -1,3 +1,5 @@
+#import "../../lib.typ": demo
+
 = Tools
 *Purpose:* Give the agent the ability to act, not just talk.
 
@@ -64,6 +66,5 @@ The tool call itself is available in `response["messages"][1].tool_calls`.
 This is a good moment to look at the whole message list instead of only the final answer.
 Seeing the intermediate steps makes the loop much easier to understand.
 
-*Demo code:* `src/02-tools/tools.ipynb` \
-*Running:* Execute `uv run jupyter lab` from the repository root and open the notebook.
+#demo("src/02-tools/tools.ipynb", [Execute `uv run jupyter lab` from the repository root and open the notebook.])
 

@@ -1,3 +1,5 @@
+#import "../../lib.typ": demo
+
 = Context Management
 *Purpose:* Keep a long-running agent useful as its context grows.
 
@@ -41,8 +43,7 @@ The `_summarization_event` in state records where the cutoff happened.
   caption: [The full history stays in state; the model receives a compressed view.],
 )
 
-*Demo code:* `src/09-summarization/summarization.py` \
-*Running:* `uv run python src/09-summarization/summarization.py`
+#demo("src/09-summarization/summarization.py", raw("uv run python src/09-summarization/summarization.py"))
 
 *Further reading:* #link("https://docs.langchain.com/oss/python/deepagents/context-engineering")[Deep Agents docs -- Context engineering]
 
@@ -85,8 +86,7 @@ agent = create_deep_agent(
 The demo includes two skills: `qualify-lead` and `draft-pitch`.
 Ask the agent to qualify a lead, and watch it discover and load the right skill.
 
-*Demo code:* `src/09-summarization/skills.py` \
-*Running:* `uv run python src/09-summarization/skills.py`
+#demo("src/09-summarization/skills.py", raw("uv run python src/09-summarization/skills.py"))
 
 *Further reading:* #link("https://docs.langchain.com/oss/python/deepagents/skills")[Deep Agents docs -- Skills]
 
@@ -127,8 +127,7 @@ At the end, it prints the stored `AGENTS.md` so we can see the change.
 
 That last step is important. Memory is not only read at startup; the agent can also write to it, so preferences and conventions carry forward.
 
-*Demo code:* `src/09-summarization/memory.py` \
-*Running:* `uv run python src/09-summarization/memory.py`
+#demo("src/09-summarization/memory.py", raw("uv run python src/09-summarization/memory.py"))
 
 *Further reading:* #link("https://docs.langchain.com/oss/python/deepagents/customization#memory")[Deep Agents docs -- Memory]
 

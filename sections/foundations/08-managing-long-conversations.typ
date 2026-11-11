@@ -1,3 +1,5 @@
+#import "../../lib.typ": demo
+
 = Managing Long Conversations
 *Purpose:* Keep conversations useful as they grow.
 
@@ -36,8 +38,7 @@ In a real application they should match the model's context window and your tole
 After the run, `response["messages"][0].content` contains the summary.
 The original conversation has been replaced in the model's context by that summary plus the messages we chose to keep.
 
-*Demo code:* `src/04-managing-conversation/summarization.ipynb` \
-*Running:* Execute `uv run jupyter lab` from the repository root and open the notebook.
+#demo("src/04-managing-conversation/summarization.ipynb", [Execute `uv run jupyter lab` from the repository root and open the notebook.])
 
 == Trimming messages
 Summarization is not the only option.
@@ -60,8 +61,7 @@ Removing them can free a lot of context.
 Be careful in a real agent: if you remove a tool result, keep the conversation coherent.
 The demo removes all of them so the behavior is obvious.
 
-*Demo code:* `src/04-managing-conversation/trim_messages.ipynb` \
-*Running:* Execute `uv run jupyter lab` from the repository root and open the notebook.
+#demo("src/04-managing-conversation/trim_messages.ipynb", [Execute `uv run jupyter lab` from the repository root and open the notebook.])
 
 *Further reading:* #link("https://docs.langchain.com/oss/python/langchain/middleware")[LangChain docs -- Middleware]
 
