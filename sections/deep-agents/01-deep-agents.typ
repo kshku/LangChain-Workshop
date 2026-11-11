@@ -17,7 +17,7 @@ It keeps the same tool-calling loop, but adds capabilities that make an agent re
 - An execution environment with shell and code interpreter support.
 
 #figure(
-  image("/assets/diagrams/deep-agent-harness.svg", width: 72%),
+  image("/assets/diagrams/deep-agent-harness.svg", width: 59%),
   caption: [Deep Agents adds a harness on top of the LangChain loop and the LangGraph runtime.],
 )
 

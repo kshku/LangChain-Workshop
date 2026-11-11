@@ -28,7 +28,7 @@ That is a useful habit. A remote server may expose many tools, and an agent shou
 Notice also that MCP calls are asynchronous, so the demo uses `async`/`await` and `agent.ainvoke`.
 
 #figure(
-  image("/assets/diagrams/mcp.svg", width: 100%),
+  image("/assets/diagrams/mcp.svg", width: 95%),
   caption: [MCP separates tool discovery from tool selection.],
 )
 

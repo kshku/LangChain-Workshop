@@ -44,7 +44,7 @@ Now the first call can introduce us, and the second call -- using the same confi
 
 `InMemorySaver` stores everything in memory, so it disappears when the process ends.
 That is perfect for a demo.
-For a real application, use a persistent checkpointer such as `SqliteSaver` or `PostgresSaver`.
+For a real application, use a persistent checkpointer.
 
 Try changing the `thread_id` and observe how the agent's memory changes.
 

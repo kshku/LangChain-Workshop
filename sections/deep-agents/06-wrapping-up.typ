@@ -25,5 +25,13 @@ The demos are adapted from two LangChain Academy courses:
 The courses cover more than we use here. We kept the parts that fit this session and left out topics such as multimodal messages, multi-agent systems, and deployment.
 If you want to continue, the next topics are delegation and subagents, LangSmith tracing, evaluation, and deployment.
 
+LangChain Academy lists five foundation courses as the requirements for the
+LangChain Certified Agent Engineer (LCAE) certification:
+#link("https://academy.langchain.com/pages/certifications-lcae")[academy.langchain.com/pages/certifications-lcae].
+
+If you want one place to keep learning, those five courses are the go-to resources for LangChain and
+agentic development. They are free, and they are maintained by the LangChain team, so the material
+stays current with the framework.
+
 Try changing the demos. Swap the model. Add a tool. Break something and read the trace.
 That is where the learning happens.

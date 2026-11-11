@@ -9,7 +9,6 @@ The context window does not grow with it.
 Context management decides what enters the model's context, what stays available outside it, and what can be forgotten.
 
 There are four layers:
-
 - _Input context_ -- the system prompt, memory, skills, and tool descriptions the agent starts with.
 - _Compression_ -- summarization and offloading of older history and large results.
 - _Isolation_ -- subagents that do heavy work in a separate context and return only a report.
