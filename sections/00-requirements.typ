@@ -29,8 +29,6 @@ OpenAI, Anthropic, and Google integrations are already included in the base depe
 so no extra is needed for those.
 
 If you want everything (for example, to try several providers), use `uv sync --all-extras`.
-Note that `uv sync --ollama` does not work -- `--ollama` is not a uv flag. The package group is
-called `ollama`, but uv expects the `--extra` prefix.
 
 ```bash
 git clone https://github.com/kshku/LangChain-Workshop.git

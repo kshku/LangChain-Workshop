@@ -29,15 +29,6 @@
 
 #align(center, title())
 
-#align(center)[
-  #text(size: 10pt, style: "italic")[
-    These notes follow the demo code in the `main` branch. \
-    `src/01`--`04` are adapted from the LangChain Foundation course; \
-    `src/05`--`09` from the Deep Agents course. \
-    This is a curated subset, not a full copy of either course.
-  ]
-]
-
 #include "sections/00-requirements.typ"
 #include "sections/foundations/01-introduction.typ"
 #include "sections/foundations/02-what-is-an-agent.typ"
