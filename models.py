@@ -5,3 +5,5 @@ model = init_chat_model(
     model=settings.model_name,
     model_provider=settings.model_provider,
 )
+
+summarization_model = model
