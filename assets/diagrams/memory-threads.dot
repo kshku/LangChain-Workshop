@@ -1,0 +1,14 @@
+digraph MemoryThreads {
+  graph [rankdir=LR, bgcolor="transparent", pad="0.2", nodesep="0.4", ranksep="0.6", fontname="Helvetica"];
+  node [shape=box, style="rounded,filled", fillcolor="#EAF1F8", color="#17365D", fontcolor="#17365D", fontname="Helvetica", fontsize=11, penwidth=1.2, margin="0.16,0.09"];
+  edge [color="#5B6B7C", fontcolor="#4A5A6A", fontname="Helvetica", fontsize=10, arrowsize=0.8];
+
+  agent [label="Agent"];
+  checkpointer [label="Checkpointer\nInMemorySaver", fillcolor="#17365D", fontcolor="#FFFFFF"];
+  thread1 [label="Thread 1\nmessages + state"];
+  thread2 [label="Thread 2\nmessages + state"];
+
+  agent -> checkpointer [label="save / load"];
+  checkpointer -> thread1 [label="thread_id = 1"];
+  checkpointer -> thread2 [label="thread_id = 2"];
+}

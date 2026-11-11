@@ -1,0 +1,18 @@
+digraph AgentLoop {
+  graph [rankdir=LR, bgcolor="transparent", pad="0.2", nodesep="0.35", ranksep="0.55", fontname="Helvetica"];
+  node [shape=box, style="rounded,filled", fillcolor="#EAF1F8", color="#17365D", fontcolor="#17365D", fontname="Helvetica", fontsize=11, penwidth=1.2, margin="0.16,0.09"];
+  edge [color="#5B6B7C", fontcolor="#4A5A6A", fontname="Helvetica", fontsize=10, arrowsize=0.8];
+
+  user [label="User request"];
+  agent [label="Agent\nmessages + tools"];
+  model [label="Chat model\nreasoning"];
+  tools [label="Tools\nfunctions / APIs"];
+  answer [label="Final answer"];
+
+  user -> agent;
+  agent -> model;
+  model -> tools [label="tool call", color="#B5651D", fontcolor="#B5651D"];
+  tools -> model [label="tool result", color="#B5651D", fontcolor="#B5651D"];
+  model -> answer [label="no more tool calls"];
+  answer -> user;
+}

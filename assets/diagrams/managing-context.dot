@@ -1,0 +1,38 @@
+digraph ManagingContext {
+  graph [rankdir=LR, bgcolor="transparent", pad="0.2", nodesep="0.35", ranksep="0.45", fontname="Helvetica"];
+  node [shape=box, style="rounded,filled", fillcolor="#EAF1F8", color="#17365D", fontcolor="#17365D", fontname="Helvetica", fontsize=11, penwidth=1.2, margin="0.14,0.08"];
+  edge [color="#5B6B7C", fontcolor="#4A5A6A", fontname="Helvetica", fontsize=10, arrowsize=0.8];
+
+  subgraph cluster_summary {
+    label="Summarization";
+    fontname="Helvetica";
+    fontsize=11;
+    fontcolor="#17365D";
+    style="rounded,dashed";
+    color="#17365D";
+
+    full [label="Full history"];
+    trigger [label="Token threshold"];
+    summary [label="Summary + recent\nmessages sent to model", fillcolor="#DCE9F5"];
+
+    full -> trigger -> summary;
+  }
+
+  subgraph cluster_trim {
+    label="Trimming";
+    fontname="Helvetica";
+    fontsize=11;
+    fontcolor="#17365D";
+    style="rounded,dashed";
+    color="#17365D";
+
+    all [label="All messages"];
+    filter [label="before_agent\nmiddleware"];
+    keep [label="Keep human / AI\nmessages"];
+    drop [label="Remove\nToolMessages", fillcolor="#FFF4E5", color="#B5651D", fontcolor="#B5651D"];
+
+    all -> filter;
+    filter -> keep;
+    filter -> drop;
+  }
+}

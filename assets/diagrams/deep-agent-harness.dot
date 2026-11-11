@@ -1,0 +1,12 @@
+digraph DeepAgentHarness {
+  graph [rankdir=TB, bgcolor="transparent", pad="0.2", nodesep="0.35", ranksep="0.4", fontname="Helvetica"];
+  node [shape=box, style="rounded,filled", fillcolor="#EAF1F8", color="#17365D", fontcolor="#17365D", fontname="Helvetica", fontsize=11, penwidth=1.2, margin="0.18,0.10"];
+  edge [color="#5B6B7C", fontcolor="#4A5A6A", fontname="Helvetica", fontsize=10, arrowsize=0.8];
+
+  model [label="Chat model"];
+  langchain [label="LangChain\nagent loop"];
+  langgraph [label="LangGraph\nruntime"];
+  harness [label="Deep Agents harness\nplanning · filesystem · context\nsubagents · HITL · execution", fillcolor="#17365D", fontcolor="#FFFFFF", width="4.2"];
+
+  model -> langchain -> langgraph -> harness;
+}

@@ -1,0 +1,14 @@
+digraph Summarization {
+  graph [rankdir=LR, bgcolor="transparent", pad="0.2", nodesep="0.35", ranksep="0.55", fontname="Helvetica"];
+  node [shape=box, style="rounded,filled", fillcolor="#EAF1F8", color="#17365D", fontcolor="#17365D", fontname="Helvetica", fontsize=11, penwidth=1.2, margin="0.16,0.09"];
+  edge [color="#5B6B7C", fontcolor="#4A5A6A", fontname="Helvetica", fontsize=10, arrowsize=0.8];
+
+  stored [label="Stored thread\nraw history (never trimmed)"];
+  event [label="Summarization event\ncutoff_index", fillcolor="#17365D", fontcolor="#FFFFFF"];
+  visible [label="Model sees\nsummary + messages[cutoff:]", fillcolor="#DCE9F5"];
+  offload [shape=note, label="Large tool results\nmoved to filesystem", fillcolor="#FFF4E5", color="#B5651D", fontcolor="#B5651D"];
+
+  stored -> event;
+  event -> visible;
+  event -> offload [label="offload", style=dashed];
+}

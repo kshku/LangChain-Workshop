@@ -1,0 +1,18 @@
+digraph ProviderAbstraction {
+  graph [rankdir=LR, bgcolor="transparent", pad="0.2", nodesep="0.35", ranksep="0.55", fontname="Helvetica"];
+  node [shape=box, style="rounded,filled", fillcolor="#EAF1F8", color="#17365D", fontcolor="#17365D", fontname="Helvetica", fontsize=11, penwidth=1.2, margin="0.16,0.09"];
+  edge [color="#5B6B7C", fontcolor="#4A5A6A", fontname="Helvetica", fontsize=10, arrowsize=0.8];
+
+  app [label="Application"];
+  lc [label="LangChain\ninit_chat_model()", fillcolor="#17365D", fontcolor="#FFFFFF"];
+  openai [label="OpenAI API"];
+  anthropic [label="Anthropic API"];
+  google [label="Google API"];
+  other [label="other providers", style="rounded,dashed,filled", fillcolor="#F7F9FC"];
+
+  app -> lc;
+  lc -> openai [label="openai:..."];
+  lc -> anthropic [label="anthropic:..."];
+  lc -> google [label="google_genai:..."];
+  lc -> other [style=dashed];
+}

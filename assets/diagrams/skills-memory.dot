@@ -1,0 +1,35 @@
+digraph SkillsMemory {
+  graph [rankdir=LR, bgcolor="transparent", pad="0.2", nodesep="0.35", ranksep="0.5", fontname="Helvetica"];
+  node [shape=box, style="rounded,filled", fillcolor="#EAF1F8", color="#17365D", fontcolor="#17365D", fontname="Helvetica", fontsize=11, penwidth=1.2, margin="0.14,0.08"];
+  edge [color="#5B6B7C", fontcolor="#4A5A6A", fontname="Helvetica", fontsize=10, arrowsize=0.8];
+
+  subgraph cluster_skills {
+    label="Skills";
+    fontname="Helvetica";
+    fontsize=11;
+    fontcolor="#17365D";
+    style="rounded,dashed";
+    color="#17365D";
+
+    metadata [label="SKILL.md\nname + description"];
+    full [label="Full instructions\nloaded on demand"];
+    metadata -> full [label="task matches"];
+  }
+
+  subgraph cluster_memory {
+    label="Memory";
+    fontname="Helvetica";
+    fontsize=11;
+    fontcolor="#17365D";
+    style="rounded,dashed";
+    color="#17365D";
+
+    agents [label="AGENTS.md\nalways loaded at startup"];
+  }
+
+  context [label="Model context", fillcolor="#17365D", fontcolor="#FFFFFF"];
+
+  metadata -> context [label="at startup"];
+  full -> context [label="when needed", style=dashed];
+  agents -> context [label="always"];
+}

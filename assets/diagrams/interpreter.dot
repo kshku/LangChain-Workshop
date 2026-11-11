@@ -1,0 +1,20 @@
+digraph Interpreter {
+  graph [rankdir=LR, bgcolor="transparent", pad="0.2", nodesep="0.35", ranksep="0.55", fontname="Helvetica"];
+  node [shape=box, style="rounded,filled", fillcolor="#EAF1F8", color="#17365D", fontcolor="#17365D", fontname="Helvetica", fontsize=11, penwidth=1.2, margin="0.16,0.09"];
+  edge [color="#5B6B7C", fontcolor="#4A5A6A", fontname="Helvetica", fontsize=10, arrowsize=0.8];
+
+  model [label="Model"];
+  eval [label="eval (QuickJS)\nJavaScript", fillcolor="#17365D", fontcolor="#FFFFFF"];
+  tool [label="query_chinook()"];
+  db [label="SQLite\nChinook"];
+  note [shape=note, label="Intermediate values stay\nin JavaScript variables", fillcolor="#FFF4E5", color="#B5651D", fontcolor="#B5651D"];
+  result [label="Final result"];
+
+  model -> eval [label="one tool call"];
+  eval -> tool [label="PTC"];
+  tool -> db [label="SQL"];
+  db -> tool [label="rows"];
+  eval -> note [style=dashed, arrowhead=none];
+  eval -> result;
+  result -> model;
+}

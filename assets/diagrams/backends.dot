@@ -1,0 +1,16 @@
+digraph Backends {
+  graph [rankdir=LR, bgcolor="transparent", pad="0.2", nodesep="0.35", ranksep="0.55", fontname="Helvetica"];
+  node [shape=box, style="rounded,filled", fillcolor="#EAF1F8", color="#17365D", fontcolor="#17365D", fontname="Helvetica", fontsize=11, penwidth=1.2, margin="0.16,0.09"];
+  edge [color="#5B6B7C", fontcolor="#4A5A6A", fontname="Helvetica", fontsize=10, arrowsize=0.8];
+
+  paths [label="Virtual paths\n/reference/...\n/memories/..."];
+  composite [label="CompositeBackend", fillcolor="#17365D", fontcolor="#FFFFFF"];
+  state [label="StateBackend\nagent state"];
+  filesystem [label="FilesystemBackend\nlocal disk"];
+  store [label="StoreBackend\nLangGraph store"];
+
+  paths -> composite;
+  composite -> state [label="default"];
+  composite -> filesystem [label="/reference/"];
+  composite -> store [label="/memories/"];
+}
